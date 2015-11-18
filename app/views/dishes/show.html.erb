@@ -9,7 +9,18 @@
       <dd><%= @dish.name %></dd>
 
       <dt>Cuisine</dt>
-      <dd><%= @dish.cuisine_id %></dd>
+      <dd><%= @dish.cuisine.name %></dd>
+
+      <dt>Favorite Venues</dt>
+      <dd>
+        <ul>
+          <% @dish.favorites.each do |favorite| %>
+          <li>
+          <%= favorite.venue.name %> by <%= favorite.user.username %>
+          </li>
+          <%end%>
+        </ul>
+      </dd>
 
     </dl>
 

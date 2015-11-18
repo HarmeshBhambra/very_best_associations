@@ -11,6 +11,27 @@
       <dt>City</dt>
       <dd><%= @neighborhood.city %></dd>
 
+      <dt>Venues</dt>
+      <dd>
+        <ul>
+          <% @neighborhood.venues.each do |venue| %>
+          <li>
+          <%= venue.name %>
+          </li>
+          <%end%>
+        </ul>
+      </dd>
+
+      <dt>Favorite Venues</dt>
+      <dd>
+        <ul>
+          <% @neighborhood.favorites.each do |favorite| %>
+          <li>
+          <%= favorite.venue.name %>
+          </li>
+          <%end%>
+        </ul>
+      </dd>
     </dl>
 
     <div class="btn-group btn-group-justified">
@@ -23,6 +44,7 @@
       <a href="/delete_neighborhood/<%= @neighborhood.id %>" class="btn btn-danger" rel="nofollow">
         Delete
       </a>
+
     </div>
   </div>
 </div>
